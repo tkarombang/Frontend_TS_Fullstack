@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Utama</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin-top: 50px;
+        }
+        nav {
+            margin-top: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 18px;
+            margin: 10px;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Selamat Datang di Aplikasi Demo TypeScript</h1>
+    <nav>
+        <a href="/" id="welcome">Halaman Utama</a>
+        <a href="#list" id="list">Daftar Produk</a>
+        <a href="#users" id="users">Daftar Pengguna</a>
+    </nav>
+    <div id="content"></div>
+
+    <!-- Script TypeScript -->
+    <script type="module" src="bundle.js"></script>
+</body>
+<!-- <body>
+    <h1>Selamat Datang di Aplikasi Demo TypeScript</h1>
+    <nav>
+        <a href="#" id="welcome">Halaman Utama</a>
+        <a href="#list" id="list">Daftar Produk</a>
+        <a href="#users" id="users">Daftar Pengguna</a>
+    </nav>
+    <div id="content"></div>
+
+    
+    <script type="module" src="dist/app.js"></script>
+</body> -->
+</html>
