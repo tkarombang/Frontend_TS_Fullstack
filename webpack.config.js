@@ -5,7 +5,8 @@ module.exports = {
   entry: './src/app.ts',  // Sesuaikan dengan path entry file kamu
   output: {
     filename: 'bundle.js', // Output bundle file
-    path: path.resolve(__dirname, 'dist')  // Pastikan output file ditempatkan di direktori dist
+    path: path.resolve(__dirname, 'dist'),  // Pastikan output file ditempatkan di direktori dist
+    clean: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -30,7 +31,11 @@ module.exports = {
         test: /\.ts$/,  // Menangani file TypeScript
         use: 'ts-loader',
         exclude: /node_modules/
-      }
+      },
+      // {
+      //   test: /\.css$/,
+      //   use: ['style-loader', 'css-loader'],
+      // }
     ]
   },
   devServer: {
