@@ -23,4 +23,27 @@ export class ApiServiceDev {
       return [];
     }
   }
+
+  async createDeveloper(developer: Omit<Developer, "developerId">): Promise<void> {
+    try {
+      await axios.post(`${this.API_URL}`, developer);
+      console.log("DEVELOPER BARU BERHASIL DIBUAT");
+    } catch (err) {
+      console.error("GAGAL MENAMBAHKAN DEVELOPER", err);
+    }
+  }
+
+  async updateDeveloper(developer: Developer): Promise<void> {
+    try {
+      await axios.put(`${this.API_URL}/${developer.developerId}`, developer, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      console.log("DEVELOPER UPDATE SUCCESSFULL");
+    } catch (error) {
+      console.error("ERROR UPDATING DEVELOPER:", error);
+      throw new Error("Failed to update Developer");
+    }
+  }
 }

@@ -4,7 +4,7 @@ import { WelcomePage } from "./welcome";
 
 // Render Page
 import { renderProjectPage } from "./projects/projectPage";
-import { renderDeveloperPage } from "./developer/deceloperPage";
+import { renderDeveloperPage } from "./developer/developerPage";
 import { renderUserPage } from "./users/usersPage";
 
 // Inisialisasi Router
@@ -16,7 +16,7 @@ const pages = [
   {
     name: "welcome",
     render: () => {
-      const welcomePage = new WelcomePage(contentId);
+      const welcomePage = new WelcomePage(contentId, "http://localhost:5020/api/Developers");
       welcomePage.render();
     },
   },

@@ -1,4 +1,5 @@
 import { Developer } from "./apiServiceDev";
+import { openEditModal } from "./editModal";
 
 export class DeveloperPage {
   private tableBody: HTMLTableSectionElement;
@@ -28,14 +29,20 @@ export class DeveloperPage {
       this.tableBody.appendChild(row);
     });
 
+    this.addEditButtonListener();
     //Tambahkan event listener untuk tombol Edit
+  }
+
+  private addEditButtonListener(): void {
     const editBtn = this.tableBody.querySelectorAll(".edit-btn");
     editBtn.forEach((button) => {
       button.addEventListener("click", (event: Event) => {
         const target = event.target as HTMLButtonElement;
         const developerId = target.getAttribute("data-id");
+
         if (developerId) {
-          alert(`Tombol Developer - ${developerId}`);
+          // alert(`Tombol Developer - ${developerId}`);
+          openEditModal(parseInt(developerId));
         }
       });
     });
